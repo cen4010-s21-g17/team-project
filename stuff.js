@@ -1,14 +1,14 @@
-$("#Ladarrius").click(function(){
+$("#LaDarrius").click(function(){
     $("#text").html("Does sick kick flips")
-    $("#doggo").attr('src',"dog1.svg")
+    $("#doggo").attr('src',"assets/dog1.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("LaDarrius Johnson")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~ladarriusjoh2019/p2/")
+    $("#link").attr("href", "Profile-LaDarrius/index.html")
     $("#link").removeClass("d-none")
 })
 $("#Nicholas").click(function(){
     $("#text").html("Posses heat vision")
-    $("#doggo").attr('src',"dog2.svg")
+    $("#doggo").attr('src',"assets/dog2.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Nicholas Le")
     $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
@@ -16,7 +16,7 @@ $("#Nicholas").click(function(){
 })
 $("#James").click(function(){
     $("#text").html("Close-Up Magic Expert")
-    $("#doggo").attr('src',"dog3.svg")
+    $("#doggo").attr('src',"assets/dog3.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("James Macdonald")
     $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
@@ -24,15 +24,15 @@ $("#James").click(function(){
 })
 $("#Michael").click(function(){
     $("#text").html("Three goblins in a large coat")
-    $("#doggo").attr('src',"dog4.svg")
+    $("#doggo").attr('src',"assets/dog4.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Michael Romero")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
+    $("#link").attr("href", "profile-Michael/index.html")
     $("#link").removeClass("d-none")
 })
 $("#Dennis").click(function(){
     $("#text").html("Cybermancer with a gun for a left hand")
-    $("#doggo").attr('src',"dog5.svg")
+    $("#doggo").attr('src',"assets/dog5.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Dennis Sonjaco")
     $("#link").attr("href", "https://lamp.cse.fau.edu/~dsonjaco2018/p2/")
