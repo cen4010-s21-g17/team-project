@@ -1,0 +1,23 @@
+/*!
+ * Start Bootstrap - The Big Picture (https://startbootstrap.com/template-overviews/the-big-picture)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-the-big-picture/blob/master/LICENSE)
+ */
+body {
+  background: url('../wizard.png') no-repeat center center fixed;
+  /*image created by Anthony Clark @nedriod on twitter*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.customdrop{
+  background-color: #169DB2;
+  color: #ffffff;
+}
+.dropdown-menu > a:hover{
+  background-image:none;
+  background-color:#8aa2e3
+
+}
