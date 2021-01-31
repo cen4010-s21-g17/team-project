@@ -3,7 +3,7 @@ $("#Ladarrius").click(function(){
     $("#doggo").attr('src',"dog1.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("LaDarrius Johnson")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
+    $("#link").attr("href", "https://lamp.cse.fau.edu/~ladarriusjoh2019/p2/")
     $("#link").removeClass("d-none")
 })
 $("#Nicholas").click(function(){
@@ -35,6 +35,6 @@ $("#Dennis").click(function(){
     $("#doggo").attr('src',"dog5.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Dennis Sonjaco")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
+    $("#link").attr("href", "https://lamp.cse.fau.edu/~dsonjaco2018/p2/")
     $("#link").removeClass("d-none")
 })
