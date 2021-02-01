@@ -11,7 +11,7 @@ $("#Nicholas").click(function(){
     $("#doggo").attr('src',"assets/dog2.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Nicholas Le")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
+    $("#link").attr("href", "profile-Nicholas/index.html")
     $("#link").removeClass("d-none")
 })
 $("#James").click(function(){
@@ -19,7 +19,7 @@ $("#James").click(function(){
     $("#doggo").attr('src',"assets/dog3.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("James Macdonald")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~michaelromer2020/")
+    $("#link").attr("href", "Profile-James/index.html")
     $("#link").removeClass("d-none")
 })
 $("#Michael").click(function(){
@@ -35,6 +35,14 @@ $("#Dennis").click(function(){
     $("#doggo").attr('src',"assets/dog5.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Dennis Sonjaco")
-    $("#link").attr("href", "https://lamp.cse.fau.edu/~dsonjaco2018/p2/")
+    $("#link").attr("href", "Profile-Dennis/index.html")
+    $("#link").removeClass("d-none")
+})
+$("#Ethan").click(function(){
+    $("#text").html("Loose cannon with nothing left to lose")
+    $("#doggo").attr('src',"assets/dog6.svg")
+    $("#doggo").removeClass("d-none")
+    $("#name").html("Ethan Fisher")
+    $("#link").attr("href", "Profile-Dennis/index.html")
     $("#link").removeClass("d-none")
 })
