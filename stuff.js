@@ -5,6 +5,8 @@ $("#LaDarrius").click(function(){
     $("#name").html("LaDarrius Johnson")
     $("#link").attr("href", "Profile-LaDarrius/index.html")
     $("#link").removeClass("d-none")
+    $("#link-lamp").attr("href","https://lamp.cse.fau.edu/~ladarriusjoh2019/p2/")
+    $("#link-lamp").removeClass("d-none")
 })
 $("#Nicholas").click(function(){
     $("#text").html("Posses heat vision")
@@ -13,6 +15,8 @@ $("#Nicholas").click(function(){
     $("#name").html("Nicholas Le")
     $("#link").attr("href", "profile-Nicholas/index.html")
     $("#link").removeClass("d-none")
+    $("#link-lamp").attr("href","https://lamp.cse.fau.edu/~nle2019/p2/index.html")
+    $("#link-lamp").removeClass("d-none")
 })
 $("#James").click(function(){
     $("#text").html("Close-Up Magic Expert")
@@ -21,6 +25,8 @@ $("#James").click(function(){
     $("#name").html("James Macdonald")
     $("#link").attr("href", "Profile-James/index.html")
     $("#link").removeClass("d-none")
+    $("#link-lamp").attr("href","https://lamp.cse.fau.edu/~macdonaldj2016/p2/")
+    $("#link-lamp").removeClass("d-none")
 })
 $("#Michael").click(function(){
     $("#text").html("Three goblins in a large coat")
@@ -29,6 +35,8 @@ $("#Michael").click(function(){
     $("#name").html("Michael Romero")
     $("#link").attr("href", "profile-Michael/index.html")
     $("#link").removeClass("d-none")
+    $("#link-lamp").attr("href","https://lamp.cse.fau.edu/~michaelromer2020/")
+    $("#link-lamp").removeClass("d-none")
 })
 $("#Dennis").click(function(){
     $("#text").html("Cybermancer with a gun for a left hand")
@@ -37,6 +45,8 @@ $("#Dennis").click(function(){
     $("#name").html("Dennis Sonjaco")
     $("#link").attr("href", "Profile-Dennis/index.html")
     $("#link").removeClass("d-none")
+    $("#link-lamp").attr("href","https://lamp.cse.fau.edu/~dsonjaco2018/p2/")
+    $("#link-lamp").removeClass("d-none")
 })
 $("#Ethan").click(function(){
     $("#text").html("Loose cannon with nothing left to lose")
@@ -45,4 +55,6 @@ $("#Ethan").click(function(){
     $("#name").html("Ethan Fisher")
     $("#link").attr("href", "Profile-Dennis/index.html")
     $("#link").removeClass("d-none")
+    $("#link-lamp").attr("href","")
+    $("#link-lamp").removeClass("d-none")
 })
