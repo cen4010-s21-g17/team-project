@@ -53,7 +53,7 @@ $("#Ethan").click(function(){
     $("#doggo").attr('src',"assets/dog6.svg")
     $("#doggo").removeClass("d-none")
     $("#name").html("Ethan Fisher")
-    $("#link").attr("href", "Profile-Dennis/index.html")
+    $("#link").attr("href", "Profile-Ethan/index.html")
     $("#link").removeClass("d-none")
     $("#link-lamp").attr("href","https://lamp.cse.fau.edu/~efisher2016/p1/")
     $("#link-lamp").removeClass("d-none")
