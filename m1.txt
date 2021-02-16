@@ -1,7 +1,7 @@
 1: Executive Summary
 	Welcome to CityInfo. This is a single page website that would give the user a number of stats concerning any city within the US to start. For our initial MVP (Minimum Viable Product), we will have a page where the user can enter a city name and immediately after they submit their text entry, the system will display the current number of COVID-19 cases in that area in addition to the weather. For our coming revisions we will also include a great number of new stats such as: crime rates, map previews, geospatial analysis, entertainment, businesses, and even more! CityInfo takes a unique and innovative stance on the travel industry as a whole. Instead of simply being economically incentivized to advertize a destination, we discuss many of the aspects more concerned travelers would like to be informed about from a completely unbiased view. This lack of bias will come from the fact that we have no monetization mechanisms at the moment, we are simply taking information from the internet and giving it to the people in one central location free of tracking and cookies.
 2: Competitive analysis
-	The following feature comparison is for our initial MVP, we will have more features coming soon:
+Insert Dennis file:
 	
 3: Data Definition
 	User- Anyone accessing the webpage from a web browser. There is not currently a registration process.
