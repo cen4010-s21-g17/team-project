@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Coronavirus info</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">Coronavirus COVID-19 info</h1>
+        <br>
+        <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Total Case</th>
+        <th>Total Deaths</th>
+        <th>Total Recovered</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr id="data">
+        
+        
+        </tr>
+      </tbody>
+
+        </table>
+    </div>
+    
+        <script>
+            fetch("https://api.covidtracking.com/v1/states/ca/current.json").then(
+            res=>{
+                res.json().then(
+                    data=>{
+                        console.log(data);
+                        if(data.length > 0){
+                            var temp = "";
+                    
+                    data.forEach((u)=>{
+                        temp +="<tr>";
+                        temp += "<td>"+u.total+"</td>";
+                        temp += "<td>"+u.death+"</td>";
+                        temp += "<td>"+u.recovered+"</td></tr>";
+                    })
+                    document.getElementById("data").innerHTML = temp;
+                }
+            })
+    })
+    </script>
+
+</body>
+    
+</html>
