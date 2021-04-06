@@ -5,54 +5,62 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <title>Coronavirus info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container">
-        <h1 class="text-center my-5">Coronavirus COVID-19 info</h1>
+        <h1 class="text-center mt-5">World Covid 19 information</h1>
         <br>
         <table class="table table-hover">
     <thead>
       <tr>
-        <th>Total Case</th>
+        <th>New Cases</th>
+        <th>Total Cases</th>
+        <th>New Deaths</th>
         <th>Total Deaths</th>
-        <th>Total Recovered</th>
+        <th>New Recovery</th>
+        <th>Total Recovery</th>
       </tr>
     </thead>
     <tbody>
         <tr id="data">
-        
-        
         </tr>
-      </tbody>
-
-        </table>
+      
+    </tbody>
+  </table>
     </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
     
-        <script>
-            fetch("https://api.covidtracking.com/v1/states/ca/current.json").then(
-            res=>{
-                res.json().then(
-                    data=>{
-                        console.log(data);
-                        if(data.length > 0){
-                            var temp = "";
-                    
-                    data.forEach((u)=>{
-                        temp +="<tr>";
-                        temp += "<td>"+u.total+"</td>";
-                        temp += "<td>"+u.death+"</td>";
-                        temp += "<td>"+u.recovered+"</td></tr>";
-                    })
-                    document.getElementById("data").innerHTML = temp;
-                }
+    $(document).ready(function(){
+        init()
+        
+        function init(){
+            var url = "https://api.covid19api.com/summary"
+            
+            var dat =''
+            $.get(url,function(data){
+                console.log(data.Global)
+                
+                data = `
+<td>${data.Global.NewConfirmed}</td>
+<td>${data.Global.TotalConfirmed}</td>
+<td>${data.Global.NewDeaths}</td>
+<td>${data.Global.TotalDeaths}</td>
+<td>${data.Global.NewRecovered}</td>
+<td>${data.Global.TotalRecovered}</td>
+
+`
+$("#data").html(data)
+                
             })
+        }
     })
     </script>
-
-</body>
     
 </html>
