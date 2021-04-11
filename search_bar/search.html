@@ -2,18 +2,21 @@
 <html lang="en">
     <head>
   <link rel="stylesheet" href="style.css">
-        <script src="search.js"></script>
+        
 </head>
-   
-    
- <div class="container">
-  <input class="search-input" type="text" placeholder= "Enter Name of City..." />
-  <div class = "suggestions">
-    
+<div class="container">
+    <div class="wrapper">
+      <input type="text" name="search" id="search" placeholder="Type to search" autocomplete="chrome-off">
+      <button><i class="fa fa-search"></i></button>
+      <div class="results">
+        <ul>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
     
-    
+    <script src="suggestions.js"></script>
+<script src="search.js"></script>
     
     
     
