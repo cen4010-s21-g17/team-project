@@ -1,28 +1,50 @@
-var cities = [
-  {name: 'Fort Lauderdale'},
-  {name: 'Miami'},
-  {name: 'Orlando'},
-  {name: 'Tampa'}
+let city = [
+  'Tampa',
+  'Miami',
+  'Fort Lauderdale',
+  'Orlando',
+  'Jacksonville',
+  'Davie',
+  'Weston',
 ];
 
-const  searchInput = document.querySelector('.search-input');
-const suggestionsPanel = document.querySelector('.suggestions');
- 
-  searchInput.addEventListener("keyup", function() {
-    const input = searchInput.value;
-    suggestionsPanel.innerHTML = '';
-    const suggestions = cities.filter(function(country) {
-    return cities.name.toLowerCase().startsWith(input);
-  });
-  suggestions.forEach(function(suggested) {
-   const div = document.createElement('div');
-    div.innerHTML = suggested.name;
-    suggestionsPanel.appendChild(div);
-  });
-  if (input == '') {
-    suggestionsPanel.innerHTML = ''; 
+const searchInput = document.getElementById('search');
+const searchWrapper = document.querySelector('.wrapper');
+const resultsWrapper = document.querySelector('.results');
+
+searchInput.addEventListener('keyup', () => {
+  let results = [];
+  let input = searchInput.value;
+  if (input.length) {
+    results = city.filter((item) => {
+      return item.toLowerCase().includes(input.toLowerCase());
+    });
   }
-  })
+  renderResults(results);
+});
+
+function renderResults(results) {
+  if (!results.length) {
+    return searchWrapper.classList.remove('show');
+  }
+
+  const content = results
+    .map((item) => {
+      return `<li>${item}</li>`;
+    })
+    .join('');
+
+  searchWrapper.classList.add('show');
+  resultsWrapper.innerHTML = `<ul>${content}</ul>`;
+}
+
+
+
+
+
+
+
+
 
 
 
