@@ -139,8 +139,10 @@ function clickMe() {
                    var city = item.location.city;
                    var state = item.location.state;
                    var zipcode = item.location.zip_code;
+                   var url = item.url;
                    // Append our result into our page
-                   $('#results').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>');
+                   $('#results').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.<br> Click <a href="'+url+'">HERE</a> to write a review!</div>');
+                   
              });
            } else {
                // If our results are 0; no businesses were returned by the JSON therefor we display on the page no results were found
