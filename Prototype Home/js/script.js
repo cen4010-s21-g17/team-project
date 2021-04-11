@@ -8,7 +8,12 @@ var booseclick=false;
 var city1=1;
 // $(document).ready(function() {
 
-
+$('#city1').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+           clickMe(); 
+        }
+});
 $( "#booton" ).on( "click", function( ) {
     clickMe();
   });
@@ -24,10 +29,10 @@ $( "#home-tab" ).on( "click", function( ) {
 
 $( "#weather-tab" ).on( "click", function( ) {
     console.log("weather_unlock");
-    if(!wooseclick){resetclick();};
-    
+    if(!wooseclick){resetclick();}
     wooseclick=true;
-    $("#weather-tab").addClass("font-weight-heavy",30)
+    if(mooseclick){clickMe();}
+    $("#weather-tab").addClass("font-weight-heavy",30);
     console.log(wooseclick);
 
 });
@@ -36,8 +41,8 @@ $( "#cinfo-tab" ).on( "click", function( ) {
     console.log("cinfo_unlock");
     if(!cooseclick){resetclick();};
     cooseclick=true;
+    if(mooseclick){clickMe();}
     console.log(cooseclick);
-
 
   });
 
@@ -45,6 +50,7 @@ $( "#bus-tab" ).on( "click", function( ) {
     console.log("bus_unlock");
     if(!booseclick){resetclick();};
     booseclick=true;
+    if(mooseclick){clickMe();}
     console.log(booseclick);
 
   });
@@ -74,7 +80,6 @@ function resetclick(){
         booseclick=false;
         $("#yelp").addClass("d-none",60);
     }
-    mooseclick=false;
     aooseclick=false;
 }
 
@@ -83,24 +88,30 @@ function clickMe() {
     city1 = $("#city1").val().trim();
     console.log(city1);
 
+    if(!mooseclick){
+        mooseclick=true;
+        $( "#home" ).addClass( "d-none",60 );
+        if((wooseclick && booseclick && cooseclick &&aooseclick)==0){cooseclick=true;}
+        }
+
     if(wooseclick){
         compareBtnClick();
         $( "#forecast" ).removeClass( "d-none",60 );
+        return;
     }
     if(booseclick){
         yelp();
         $("#yelp").removeClass("d-none",60);
+        return;
     }
     if(cooseclick){
         init();
         $("#covids").removeClass("d-none",60);
+        return;
     }
     
     // printo();
-     if(!mooseclick){
-     mooseclick=true;
-     $( "#home" ).addClass( "d-none",60 );
-     }
+
   }
 
 //************************************************ */
@@ -141,7 +152,7 @@ function clickMe() {
                    var zipcode = item.location.zip_code;
                    var url = item.url;
                    // Append our result into our page
-                   $('#results').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.<br> Click <a href="'+url+'">HERE</a> to write a review!</div>');
+                   $('#results').append('<div id="' + id + '" style="card margin-top:50px;margin-bottom:50px;"><img class="card-img-top" src="' + image + '" alt="Business img" style="width:400px;height:300px;"><div class="card-body"><h5 class="card-title">' + name + '</h5> <br>(' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.<br> Click <a href="'+url+'">HERE</a> to write a review!</div></div>');
                    
              });
            } else {
