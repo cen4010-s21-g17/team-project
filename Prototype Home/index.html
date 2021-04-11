@@ -35,19 +35,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" id="cinfo-tab" href="#about">Covid_Stats</a>
+            <a class="nav-link" id="cinfo-tab" href="#covid_stats">Covid_Stats</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="bus-tab" href="#about">Businesses</a>
+            <a class="nav-link js-scroll-trigger" id="bus-tab" href="#businesses">Businesses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="weather-tab" href="#about">Weather</a>
+            <a class="nav-link js-scroll-trigger" id="weather-tab" href="#weather">Weather</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="avoid-tab" href="#about">Places_To_Avoid</a>
+            <a class="nav-link js-scroll-trigger" id="avoid-tab" href="#places_to_avoid">Places_To_Avoid</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="logout" href="#about">Log_Out</a>
+            <a class="nav-link js-scroll-trigger" id="logout" href="#logout">Log_Out</a>
           </li>
         </ul>
       </div>
@@ -74,13 +74,15 @@
     <!-- /.row -->
 
     <!-- Call to Action Well -->
-    <div class="bg-light my-5 py-4">
+    <div class="container my-5 py-4">
+      <div class="row-lg-6">
         <!--WEATHER TAB HERE-->
-        <div id="forecast" class="row-lg-6 justify-content-center d-none">
-             <p>5 Day Forecast. Updated Frequently<br><span id="city1-name"></span></p>
-             <table class="font-weight-light" id="results-city1">
+        <div id="forecast" class="col-auto text-center d-none">
+             <h5 class="font-weight-heavy">5 Day Forecast. Updated Frequently</h5>
+             <h2><span id="city1-name"></span></h2>
+             <table class="table table-center font-weight-light" id="results-city1">
                <tr>
-                  <td id="city1-day1-name"></td>
+                  <td class="text-bold" id="city1-day1-name"></td>
                   <td id="city1-day2-name"></td>
                   <td id="city1-day3-name"></td>
                   <td id="city1-day4-name"></td>
@@ -111,7 +113,7 @@
                 </table>
         </div>
         <!--BUSINESS/YELP TAB HERE-->
-        <div class="container" id="yelp">
+        <div class="container d-none" id="yelp">
             <div class="row">
                 <div class="col-lg-12">
                     <div id="results">
@@ -119,7 +121,31 @@
                     </div>
                 </div>
              </div>
-       </div>
+        </div>
+        <!--COVID_STATS TAB HERE-->
+        <div class="container d-none" ID="covids">
+          <h1 class="text-center mt-5">World Covid 19 information</h1>
+          <br>
+          <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>New Cases</th>
+          <th>Total Cases</th>
+          <th>New Deaths</th>
+          <th>Total Deaths</th>
+          <th>New Recovery</th>
+          <th>Total Recovery</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr id="data">
+          </tr>
+        
+      </tbody>
+    </table>
+        </div>
+
+      </div>
     <!-- Content Row -->
         <div class="row text-center" style="height: 350px;">
     

@@ -1,5 +1,28 @@
-// Wait until DOM is ready to register callbacks
+//************************************************ */
+//WEATHER FUNCTIONS
+//************************************************* */
 
+
+// Wait until DOM is ready to register callbacks
+//   $(function() {
+
+//     $("#city1").on("input", cityInput);
+//  });
+ 
+ // Called when city input values change
+ function cityInput(e) {
+   // Extract the text from city input that triggered the callback
+   const cityId = e.target.id;
+   const city = $(`#${cityId}`).val().trim();
+   
+   // Only show error message if no city 
+   if (city.length === 0) {
+      showElement("error-value-" + cityId);      
+   }
+   else {
+      hideElement("error-value-" + cityId);
+   }
+}
 
 
 

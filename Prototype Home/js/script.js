@@ -5,29 +5,13 @@ var wooseclick=false;
 var aooseclick=false;
 var cooseclick=true;
 var booseclick=false;
+var city1=1;
 // $(document).ready(function() {
 
 
 $( "#booton" ).on( "click", function( ) {
-    console.log("peepeepoopoo");
-    if(wooseclick){
-        compareBtnClick();
-        $( "#forecast" ).removeClass( "d-none",60 );
-    }
-    if(booseclick){
-        yelp();
-        $("#yelp").removeClass("d-none",60);
-    }
-    // clickMe();
-    // printo();
-     if(!mooseclick){
-     mooseclick=true;
-     $( "#home" ).addClass( "d-none",60 );
-    // $( "#resun" ).removeClass( "d-none",60 );
-     }
-
+    clickMe();
   });
-// });
 
 $( "#home-tab" ).on( "click", function( ) {
     console.log("home_unlock");
@@ -40,7 +24,7 @@ $( "#home-tab" ).on( "click", function( ) {
 
 $( "#weather-tab" ).on( "click", function( ) {
     console.log("weather_unlock");
-    resetclick();
+    if(!wooseclick){resetclick();};
     
     wooseclick=true;
     $("#weather-tab").addClass("font-weight-heavy",30)
@@ -50,7 +34,7 @@ $( "#weather-tab" ).on( "click", function( ) {
   
 $( "#cinfo-tab" ).on( "click", function( ) {
     console.log("cinfo_unlock");
-    resetclick();
+    if(!cooseclick){resetclick();};
     cooseclick=true;
     console.log(cooseclick);
 
@@ -59,11 +43,9 @@ $( "#cinfo-tab" ).on( "click", function( ) {
 
 $( "#bus-tab" ).on( "click", function( ) {
     console.log("bus_unlock");
-    resetclick();
+    if(!booseclick){resetclick();};
     booseclick=true;
     console.log(booseclick);
-
-    
 
   });
 
@@ -72,8 +54,6 @@ $( "#avoid-tab" ).on( "click", function( ) {
     resetclick();
     aooseclick=true;
     console.log(aooseclick);
-
-    
 
   });
 
@@ -87,6 +67,7 @@ function resetclick(){
     if(cooseclick){
         console.log("cinfo_close");   
         cooseclick=false;
+        $("#covids").addClass("d-none",60);
     }
     if(booseclick){
         console.log("bus_close");
@@ -97,86 +78,37 @@ function resetclick(){
     aooseclick=false;
 }
 
-
-function printo(){
-    var yay='Thank you!', nay='Please enter the three required integers in order to achieve a desired result.';
-    console.log(mooseclick);
-    if (mooseclick)
-    {
-        document.getElementById("err").innerHTML = nay;
-        return;
-    }
-    document.getElementById("err").innerHTML = yay;
-
-}
-
 function clickMe() {
-    //if output gives errors, it's probably receiving it as a string and not an integer. 
-    //In which case, wrap it with parseInt() to cast to int
-    var one = getVal("one");
-    var two = getVal("two");
-    var three = getVal("three");
-  
-    var arr = [one, two, three];
-    console.log(typeof arr[0]);
-    var max = Math.max.apply(Math, arr); 
-    console.log(max);
-    var min = Math.min.apply(Math, arr);
-    var ran = max-min;
-    var mean = (one+two+three)/3;
-    var med=median(arr);
+    console.log("peepeepoopoo");
+    city1 = $("#city1").val().trim();
+    console.log(city1);
 
-    sendResult(min, max, med, ran, mean);
-  }
-
-  function getVal(elem) {
-    var val = parseInt(document.getElementById(elem).value);
-    if(isNaN(val))
-        {
-            mooseclick=true;
-        }
-    if(!isNaN(val))
-    {
-        mooseclick=false;
+    if(wooseclick){
+        compareBtnClick();
+        $( "#forecast" ).removeClass( "d-none",60 );
     }
-        console.log(val);
-    return val;
-  }
-
-  function sendResult(min, max, med, ran, mean) {
-    document.getElementById("max").innerHTML = max;
-    document.getElementById("min").innerHTML = min;
-    document.getElementById("med").innerHTML = med;
-    document.getElementById("ran").innerHTML = ran;
-    document.getElementById("mean").innerHTML = mean;
-
-  }
-
-
-  $(function() {
-
-    $("#city1").on("input", cityInput);
- });
- 
- // Called when city input values change
- function cityInput(e) {
-    // Extract the text from city input that triggered the callback
-    const cityId = e.target.id;
-    const city = $(`#${cityId}`).val().trim();
+    if(booseclick){
+        yelp();
+        $("#yelp").removeClass("d-none",60);
+    }
+    if(cooseclick){
+        init();
+        $("#covids").removeClass("d-none",60);
+    }
     
-    // Only show error message if no city 
-    if (city.length === 0) {
-       showElement("error-value-" + cityId);      
-    }
-    else {
-       hideElement("error-value-" + cityId);
-    }
- }
+    // printo();
+     if(!mooseclick){
+     mooseclick=true;
+     $( "#home" ).addClass( "d-none",60 );
+     }
+  }
 
-
+//************************************************ */
+//YELP FUNCTIONS
+//************************************************* */
   function yelp(){
     console.log("yelpcall");
-    const city1 = $("#city1").val().trim();
+    city1 = $("#city1").val().trim();
     var CITY = city1;
     var myurl = "http://52.91.156.204:8080/https://api.yelp.com/v3/businesses/search?location=" + CITY;
     $.ajax({
@@ -192,7 +124,7 @@ function clickMe() {
            // If our results are greater than 0, continue
            if (totalresults > 0){
                // Display a header on the page with the number of results
-               $('#results').append('<h5>We discovered ' + totalresults + ' results!</h5>');
+               $('#results').append('<h2>We discovered ' + totalresults + ' results!</h2>');
                // Itirate through the JSON array of 'businesses' which was returned by the API
                $.each(data.businesses, function(i, item) {
                    // Store each business's object in a variable
@@ -219,7 +151,63 @@ function clickMe() {
 
   }
 
-  
+//************************************************ */
+//COVID_INFO FUNCTIONS
+//************************************************* */
+  function init(){
+    var url = "https://api.covid19api.com/summary"
+    
+    var dat =''
+    $.get(url,function(data){
+        console.log(data.Global)
+        
+        data = `
+<td>${data.Global.NewConfirmed}</td>
+<td>${data.Global.TotalConfirmed}</td>
+<td>${data.Global.NewDeaths}</td>
+<td>${data.Global.TotalDeaths}</td>
+<td>${data.Global.NewRecovered}</td>
+<td>${data.Global.TotalRecovered}</td>
 
+`
+$("#data").html(data)
+        
+    })
+}
+
+  
+//   function getVal(elem) {
+//     var val = parseInt(document.getElementById(elem).value);
+//     if(isNaN(val))
+//         {
+//             mooseclick=true;
+//         }
+//     if(!isNaN(val))
+//     {
+//         mooseclick=false;
+//     }
+//         console.log(val);
+//     return val;
+//   }
+
+//   function sendResult(min, max, med, ran, mean) {
+//     document.getElementById("max").innerHTML = max;
+//     document.getElementById("min").innerHTML = min;
+//     document.getElementById("med").innerHTML = med;
+//     document.getElementById("ran").innerHTML = ran;
+//     document.getElementById("mean").innerHTML = mean;
+
+//   }
+// function printo(){
+//     var yay='Thank you!', nay='Please enter the three required integers in order to achieve a desired result.';
+//     console.log(mooseclick);
+//     if (mooseclick)
+//     {
+//         document.getElementById("err").innerHTML = nay;
+//         return;
+//     }
+//     document.getElementById("err").innerHTML = yay;
+
+// }
 
 
