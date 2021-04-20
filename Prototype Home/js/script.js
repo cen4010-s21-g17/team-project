@@ -160,7 +160,7 @@ function clickMe() {
                    var zipcode = item.location.zip_code;
                    var url = item.url;
                    // Append our result into our page
-                   $('#results').append('<div id="' + id + '" style="card margin-top:50px;margin-bottom:50px;"><img class="card-img-top" src="' + image + '" alt="Business img" style="width:400px;height:300px;"><div class="card-body"><h5 class="card-title">' + name + '</h5> <br>(' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.<br> Click <a href="'+url+'">HERE</a> to write a review!</div></div>');
+                   $('#results').append('<div id="' + id + '" style="card margin-top:50px;margin-bottom:50px;"><img class="card-img-top" src="' + image + '" alt="Business img" style="width:400px;height:300px;"><div class="card-body"><h5 class="card-title">' + name + '</h5> <br>(' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.<br> Click <a href="'+url+'">HERE</a> to find out more!</div></div>');
                    
              });
            } else {
