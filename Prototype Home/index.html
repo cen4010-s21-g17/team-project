@@ -157,8 +157,15 @@
     <!-- COMMENTS TAB HERE -->
         <div class="container d-none" id="comment">
     
-            <div class="row">
-            <p>Comments go here.</p>
+            <div class="col-auto">
+            <p>Comments go here.<br></p>
+            <form action="/html/tags/html_form_tag_action.cfm" method="post">
+              <div>
+              <textarea name="commentform" id="commentform">Type Here!
+              </textarea>
+              </div>
+              <input type="submit" value="Submit">
+              </form>
             </div>
     
         </div>
