@@ -55,12 +55,12 @@ $( "#bus-tab" ).on( "click", function( ) {
 
   });
 
-$( "#avoid-tab" ).on( "click", function( ) {
-    console.log("avoid_unlock");
-    resetclick();
+$( "#com-tab" ).on( "click", function( ) {
+    console.log("com_unlock");
+    if(!aooseclick){resetclick();};
     aooseclick=true;
+    if(mooseclick){clickMe();}
     console.log(aooseclick);
-
   });
 
 function resetclick(){
@@ -80,11 +80,15 @@ function resetclick(){
         booseclick=false;
         $("#yelp").addClass("d-none",60);
     }
-    aooseclick=false;
+    if(aooseclick){
+        console.log("com_close");
+        aooseclick=false;
+        $("#comment").addClass("d-none",60);
+    }
 }
 
 function clickMe() {
-    console.log("peepeepoopoo");
+    console.log("clickMe");
     city1 = $("#city1").val().trim();
     console.log(city1);
 
@@ -110,7 +114,11 @@ function clickMe() {
         return;
     }
     
-    // printo();
+    if(aooseclick){
+        init();
+        $("#comment").removeClass("d-none",60);
+        return;
+    }
 
   }
 
