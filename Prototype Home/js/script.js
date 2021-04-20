@@ -5,6 +5,7 @@ var wooseclick=false;
 var aooseclick=false;
 var cooseclick=true;
 var booseclick=false;
+var zooseclick=false;
 var city1=1;
 // $(document).ready(function() {
 
@@ -85,12 +86,24 @@ function resetclick(){
         aooseclick=false;
         $("#comment").addClass("d-none",60);
     }
+    if(zooseclick){
+        console.log("err_close");
+        zooseclick=false;
+        $("#error1").addClass("d-none",60);
+    }
 }
 
 function clickMe() {
     console.log("clickMe");
     city1 = $("#city1").val().trim();
     console.log(city1);
+
+    if(city1==""){
+        zooseclick=true;
+        $("#error1").removeClass("d-none",60);
+        console.log("errormessage");
+        return;
+    };
 
     if(!mooseclick){
         mooseclick=true;
